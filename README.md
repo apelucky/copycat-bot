@@ -71,15 +71,21 @@ python -m harness.run_local --minutes 12
 3. Optional: `/setdescription`, `/setuserpic`. Commands are registered automatically at start-up.
 4. Get your numeric user id (e.g. message **@userinfobot**) → `ALLOWED_USER_IDS=123456789` (comma-separate several). **Leave empty only for testing — empty means anyone can use it.**
 
-## Deploy on Railway
+## Deploy on Render (free)
 
-1. Push this repo to GitHub (new account is fine) → Railway → **New Project → Deploy from GitHub repo**.
-2. Railway detects Python (nixpacks, Python 3.11 via `nixpacks.toml`); start command `python -m copycat` (`railway.json` / `Procfile` worker). No web port needed.
-3. **Add a Volume** mounted at `/data` and set `DB_PATH=/data/copycat.db` so balances/positions survive redeploys.
-4. Variables: `TELEGRAM_BOT_TOKEN`, `ALLOWED_USER_IDS`, `TZ=Africa/Lagos`, `DB_PATH=/data/copycat.db`, and recommended `HELIUS_API_KEY`; optional `RPC_URL_BASE`, `RPC_URL_ETHEREUM`, `RPC_URL_BSC`, `RPC_URL_ROBINHOOD`, `ETHERSCAN_API_KEY`, `X_BEARER_TOKEN`, `XAI_API_KEY`, `ENABLED_CHAINS`.
-5. Deploy, open the bot in Telegram, send `/start`, then `/chain` to pick a chain.
+The free plan only runs a **web service**, sleeps after 15 minutes without visitors, and forgets local files. This repo listens on `$PORT` (`/` and `/health`) and, when `DATABASE_URL` is set, stores every balance, position, bench timer, and alert marker in Postgres (Supabase). Step-by-step for a non-developer: **[DEPLOY_RENDER.md](DEPLOY_RENDER.md)**.
 
-Only one instance may poll a bot token at a time (Telegram long-polling) — keep replicas = 1.
+| Setting | Value |
+|---|---|
+| Service type | Web Service, **Free** |
+| Build command | `pip install -r requirements.txt` |
+| Start command | `python -m copycat` |
+| Health check path | `/health` |
+| Required env | `TELEGRAM_BOT_TOKEN`, `ALLOWED_USER_IDS`, `DATABASE_URL`, `TZ=Africa/Lagos` |
+
+Keep one instance only (Telegram polling). A free monitor should request `/health` every 10 minutes so Render does not spin the service down. Without `DATABASE_URL` and without `PORT`, a laptop run is unchanged: SQLite file, no web port.
+
+Postgres tests use a local server at `postgresql:///copycat_test` (or `TEST_DATABASE_URL`). They skip if that server is not running. `pytest -q` still runs the SQLite suite.
 
 ## Architecture
 
@@ -92,21 +98,21 @@ copycat/
                        pumpfun, solana_parse, evm_parse, xsearch
   core/                engine (copy/switch/group/dev/exit/manual), fills, sizing, ranking/health, groupbuy, risk,
                        stats, reports, settings, advisor
-  storage/             repo.py (Repository protocol) + sqlite_repo.py (WAL, restart-safe)
+  storage/             repo.py (protocol), sqlite_repo.py (local default), postgres_repo.py (DATABASE_URL / Supabase)
   bot/                 commands.py (transport-independent), telegram_app.py (PTB 21), ui.py, notifier.py (Telegram/JSONL)
   services/runner.py   wallet polling per chain, leaderboard refresh, 9 AM report, advisor
 harness/run_local.py   live end-to-end harness without Telegram
 tests/                 pytest (fixtures captured from live APIs)
 ```
 
-To move to Supabase/Postgres, implement the methods of `storage/repo.py` and pass the new repo to `app.build()`.
+`DATABASE_URL` selects Postgres (`storage/postgres_repo.py`, Supabase pooler + SSL). Unset, the bot uses SQLite.
 
 ## Known limitations
 
 - Default min liquidity is **$20k** (the mockup showed $50k); change with `/set min_liq_usd 50000`.
 - Live E2E harness: `python -m harness.run_local --minutes 13` (JSONL output in `harness/out/`, no Telegram).
 
-- Wallet monitoring is polling (Solana per-wallet signatures; EVM `eth_getLogs` on ERC-20 Transfer events), 20–30 s cadence. Copies are paper, so latency only affects the simulated fill price (which uses the live DexScreener price at copy time).
+- Wallet monitoring is polling (Solana per-wallet signatures; EVM `eth_getLogs` on ERC-20 Transfer events), 20–30 s cadence. Copies are paper, so latency only affects the simulated fill price (which uses the live DexScreener price at copy time). On Render's free plan the process is paused while the service is spun down; leader trades during a long sleep can be missed. A restart does not repeat alerts or open the same paper position twice (events are deduped in the database).
 - EVM sells into **native ETH/BNB** settle via internal transfers that logs don't show; proceeds are then estimated from price. Plain token transfers out are treated like sells (conservative for copy/dev-watch).
 - Funding-source lookups: Solana scans up to 3k signatures back (may miss the true first funder of very old wallets); EVM needs Etherscan v2 key or Blockscout.
 - Simulated fills ignore MEV/sandwich and bonding-curve specifics (pump.fun pre-migration).

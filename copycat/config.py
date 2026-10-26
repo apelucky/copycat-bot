@@ -31,6 +31,7 @@ class AppConfig:
     allowed_user_ids: set[int] = field(default_factory=set)
     tz_name: str = "Africa/Lagos"
     db_path: str = "copycat.db"
+    database_url: str | None = None
     seed_file: str = "seeds/wallets.json"
     poll_seconds: int = 25
     leaderboard_refresh_minutes: int = 360
@@ -61,6 +62,7 @@ class AppConfig:
             allowed_user_ids=_ids(_env("ALLOWED_USER_IDS")),
             tz_name=_env("TZ", "Africa/Lagos") or "Africa/Lagos",
             db_path=_env("DB_PATH", "copycat.db") or "copycat.db",
+            database_url=_env("DATABASE_URL"),
             seed_file=_env("SEED_FILE", "seeds/wallets.json") or "seeds/wallets.json",
             poll_seconds=int(_env("POLL_SECONDS", "25") or 25),
             leaderboard_refresh_minutes=int(_env("LEADERBOARD_REFRESH_MINUTES", "360") or 360),

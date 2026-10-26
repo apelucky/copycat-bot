@@ -1,5 +1,5 @@
 """Shareable PNG cards (trade card + PnL card) rendered with Pillow. Fonts come from matplotlib's bundled
-DejaVu set so rendering works on Railway without system fonts. Token text is sanitized before drawing."""
+DejaVu set so rendering works on a host without system fonts. Token text is sanitized before drawing."""
 from __future__ import annotations
 
 import re

@@ -1,5 +1,9 @@
-"""Repository protocol: the only persistence surface the engine uses. SQLite implements it today;
-a Supabase/Postgres implementation only has to provide the same methods."""
+"""Repository protocol: the only persistence surface the engine uses.
+
+`SqliteRepo` is the local default. `PostgresRepo` is used when `DATABASE_URL` is set
+(Supabase, including the pooler). Both must keep the same state across process restarts:
+balances, positions, fills, follows, bench timers, cursors, and alert dedupe.
+"""
 from __future__ import annotations
 
 from typing import Any, Protocol
@@ -46,3 +50,4 @@ class Repository(Protocol):
     # kv
     def kv_get(self, key: str, default: Any = None) -> Any: ...
     def kv_set(self, key: str, value: Any) -> None: ...
+    def ping(self) -> bool: ...

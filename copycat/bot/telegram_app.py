@@ -11,6 +11,7 @@ from telegram.ext import Application, CallbackQueryHandler, ContextTypes, Messag
 
 from ..app import build
 from ..config import AppConfig
+from ..http_health import health_status, start_from_env
 from ..services.runner import Runner
 from .commands import Commands, Reply
 
@@ -93,6 +94,9 @@ def run(cfg: AppConfig) -> None:
     notifier.repo = engine.repo
     runner = Runner(engine)
     commands = Commands(engine, runner)
+    # Render free tier is a web service: it must accept HTTP on $PORT. Polling stays the
+    # Telegram transport so a laptop run (no PORT, no public URL) behaves as before.
+    health = start_from_env(lambda: health_status(cfg, engine))
 
     async def on_text(update: Update, ctx: ContextTypes.DEFAULT_TYPE) -> None:
         if not update.effective_user or not update.message:
@@ -138,4 +142,9 @@ def run(cfg: AppConfig) -> None:
     app = Application.builder().token(cfg.telegram_token).post_init(post_init).post_shutdown(post_shutdown).build()
     app.add_handler(MessageHandler(filters.TEXT, on_text))
     app.add_handler(CallbackQueryHandler(on_cb))
-    app.run_polling(allowed_updates=Update.ALL_TYPES, drop_pending_updates=True)
+    try:
+        log.info("telegram polling starting (paper only, one instance per bot token)")
+        app.run_polling(allowed_updates=Update.ALL_TYPES, drop_pending_updates=True)
+    finally:
+        if health is not None:
+            health.stop()

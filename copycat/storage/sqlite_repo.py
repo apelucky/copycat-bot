@@ -238,6 +238,13 @@ class SqliteRepo:
     def set_funder(self, chain: str, wallet: str, funder: str | None, ts: int) -> None:
         self._x("INSERT OR REPLACE INTO funders(chain, wallet, funder, checked_at) VALUES(?,?,?,?)", (chain, wallet, funder, ts))
 
+    def ping(self) -> bool:
+        try:
+            self._q("SELECT 1")
+            return True
+        except Exception:  # noqa: BLE001
+            return False
+
     # kv
     def kv_get(self, key: str, default: Any = None) -> Any:
         r = self._q("SELECT v FROM kv WHERE k=?", (key,))

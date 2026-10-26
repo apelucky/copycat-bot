@@ -26,9 +26,11 @@ class Runner:
         wallets = e.watch_list(chain)
         state = e.repo.kv_get(f"cursor:{chain}", {})
         events = await e.adapters[chain].poll(wallets, state)
-        e.repo.kv_set(f"cursor:{chain}", state)
+        # Persist the cursor only after handling. A crash mid-poll leaves the old cursor, so the
+        # next start replays those events; leader_events dedupe then blocks a second fill or alert.
         for ev in events:
             await e.on_event(ev)
+        e.repo.kv_set(f"cursor:{chain}", state)
         hb = e.repo.kv_get("heartbeat", {})
         hb[chain] = {"ts": int(time.time()), "wallets": len(wallets), "events": hb.get(chain, {}).get("events", 0) + len(events)}
         e.repo.kv_set("heartbeat", hb)
