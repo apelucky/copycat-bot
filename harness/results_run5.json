@@ -1,0 +1,286 @@
+{
+  "chain_status": {
+    "pass": true,
+    "evidence": "{\"solana\": \"Solana: public RPC (rate-limited; set HELIUS_API_KEY for reliable wallet streaming)\", \"base\": \"Base: public RPC (rate-limited; set RPC_URL_BASE)\", \"ethereum\": \"Ethereum: public RPC (rate-limited; set RPC_URL_ETHEREUM)\", \"bsc\": \"BNB Chain: public RPC (rate-limited; set RPC_URL_BSC)\", \"robinhood\": \"Robinhood Chain: public RPC (rate-limited; set RPC_URL_ROBINHOOD)\"}"
+  },
+  "chain_select_all": {
+    "pass": true,
+    "evidence": "<b>\ud83d\udc31 COPYCAT COPY-TRADER</b> \ud83d\udfe8 PAPER\nPaper trading mode \u2014 simulated funds, no real swaps.\nActive chain: <b>All</b>\n\n\u25ce SOL<pre>Balance   10.00 SOL  (start 10)\nToday     +0.00 SOL\nOpen pos. 0  |  Exposure 0.00 SOL\nLoss cap  0 / 1 SOL used</pre>\ud83d\udc51 <b>Leader</b><pre>none (run /leaderboard or /follow)</pr"
+  },
+  "live_price_solana": {
+    "pass": true,
+    "evidence": "Bonk $2.995e-06 liq 304,338 native $101.59"
+  },
+  "live_security_solana": {
+    "pass": true,
+    "evidence": "source=rugcheck ok=True score=7.0 creator=9AhKqLR67hwapvG8SA2JFXaCshXc9nALJjpKaHZrsbkw reasons=['Mutable metadata (warn)']"
+  },
+  "live_price_base": {
+    "pass": true,
+    "evidence": "DEGEN $0.0009031 liq 256,331 native $2326.61"
+  },
+  "live_security_base": {
+    "pass": true,
+    "evidence": "source=goplus ok=True score=0.0 creator=0x3C12B77aE8B7DD1FEB63D1D6a2A819AcdA0a41d2 reasons=[]"
+  },
+  "live_price_ethereum": {
+    "pass": true,
+    "evidence": "PEPE $4.365e-06 liq 29,801,887 native $2327.1"
+  },
+  "live_security_ethereum": {
+    "pass": true,
+    "evidence": "source=goplus ok=True score=0.0 creator=0xfbfEaF0DA0F2fdE5c66dF570133aE35f3eB58c9A reasons=[]"
+  },
+  "live_price_bsc": {
+    "pass": true,
+    "evidence": "Cake $2.1 liq 987,592 native $741.96"
+  },
+  "live_security_bsc": {
+    "pass": true,
+    "evidence": "source=goplus ok=True score=0.0 creator=0x0f9399fc81dac77908a2dde54bb87ee2d17a3373 reasons=[]"
+  },
+  "live_price_robinhood": {
+    "pass": true,
+    "evidence": "ROBINHOOD $0.001285 liq 101,386 native $2327.1"
+  },
+  "live_security_robinhood": {
+    "pass": true,
+    "evidence": "source=goplus ok=True score=0.0 creator=0x3711ceA4feaDE896C913C68F01Eda97Cb06D1A42 reasons=[]"
+  },
+  "leaderboard_solana": {
+    "pass": true,
+    "evidence": "50 rows, 9 flagged, sources=['kolscan']"
+  },
+  "leaderboard_base": {
+    "pass": true,
+    "evidence": "0 rows, 0 flagged, sources=[]"
+  },
+  "leaderboard_ethereum": {
+    "pass": true,
+    "evidence": "0 rows, 0 flagged, sources=[]"
+  },
+  "leaderboard_bsc": {
+    "pass": true,
+    "evidence": "0 rows, 0 flagged, sources=[]"
+  },
+  "leaderboard_robinhood": {
+    "pass": true,
+    "evidence": "0 rows, 0 flagged, sources=[]"
+  },
+  "leaderboard_screen": {
+    "pass": true,
+    "evidence": "\u25ce SOL <b>\ud83c\udfc6 Weekly leaderboard</b>\nSource: kolscan \u00b7 7d \u00b7 9 filtered (bot/bait/thin)<pre> #  Trader        PnL   Win  Trd\n 1  slingoor     +17433  63%  182 \u25c0 FOLLOWING\n 2  zeropnl       +1498  80%  312\n 3  decu           +597  61%  665\n 4  Cented         +887  42% 1213\n 5  Kadenox        +309  55%  254\n 6  Schoen         +434  47%  572\n 7  trunoest       +323  50%  466\n 8  Jijo           +162  69%   72\n \u2013  Matt            +40  28%   18 \u26a0 too few trades 30\n \u2013  Pavlo           +48  79%   24 \u26a0 too f"
+  },
+  "auto_follow_top_solana": {
+    "pass": true,
+    "evidence": "{'user_id': 1001, 'chain': 'solana', 'wallet': '5YRgrP3mjGzrzirYYN5HAQH19cTYREYwGxW6XRJQUzij', 'label': 'slingoor', 'since': 1793017262}"
+  },
+  "evm_live_wallets_base": {
+    "pass": true,
+    "evidence": "6 live EOAs discovered from recent transfers of hot tokens: ['0x47a9a94b2753188c5d8c91701dda9a07579c8dc5', '0x23b028b6638aad4d27b33d65e9be27568d3038ff', '0x18b0f4547a89fe4c5fe84f258bea3601fa281e9f']"
+  },
+  "evm_live_wallets_ethereum": {
+    "pass": true,
+    "evidence": "6 live EOAs discovered from recent transfers of hot tokens: ['0x43def7a868db82b3ab67c2dba9ea476a3e25d9be', '0x1c6295f01776573808ea29ac6683e6b7380ce547', '0xa0cd9d02094c2d10e63dd233817e1b0e60464706']"
+  },
+  "evm_live_wallets_bsc": {
+    "pass": false,
+    "evidence": "TimeoutError()"
+  },
+  "evm_live_wallets_robinhood": {
+    "pass": true,
+    "evidence": "1 live EOAs discovered from recent transfers of hot tokens: ['0xda73c5221c39b048670fbfdb15328bb830a94489']"
+  },
+  "sol_live_active_wallets": {
+    "pass": true,
+    "evidence": "5 active traders from the hottest Solana pair: ['FHpcNSe6tb2n15bAdq4BkeYWGyZKFD7yLYrH92ng7wCT', '85NFZZRmPgfG1u3ctjrJksV3pnTKAFMUDq2cLGyhwzeS', 'Coo1AVE1CyBmgDmHwNjUWY7fmSN3Xv9CCBkmq2yu7283']"
+  },
+  "multi_user_setup": {
+    "pass": true,
+    "evidence": "users [2001, 2002, 2003, 2004, 2005] follow different live wallets per chain"
+  },
+  "token_card_solana": {
+    "pass": true,
+    "evidence": "\u25ce SOL <b>$Bonk</b> \u2014 Bonk\n<code>DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263</code><pre>Price      $2.997e-06  (2.951e-08 SOL)\nMCap       $263.73M\nLiquidity  $304.5k\nPair age   1401d  orca\nRug-check  \u2713 OK (score 7)</pre>\n\ud83d\udc40 Tracked holders: none\n\ud835\udd4f X mentions disabled (no X_BEARER_TOKEN)"
+  },
+  "manual_buy_solana": {
+    "pass": true,
+    "evidence": "\u25ce SOL <b>\ud83d\udfe2 MANUAL BUY</b> \ud83d\udfe8 PAPER\n$Bonk<pre>Spent     0.10070 SOL\nTokens    3,344,577.99\nFill      2.96e-08 (+0.31% impact)\nFees+gas  0.00170 SOL\nBalance   9.90 SOL</pre>"
+  },
+  "token_card_base": {
+    "pass": true,
+    "evidence": "\ud83d\udd35 BASE <b>$DEGEN</b> \u2014 Degen\n<code>0x4ed4e862860bed51a9570b96d89af5e1b0efefed</code><pre>Price      $0.0009035  (3.885e-07 ETH)\nMCap       $32.48M\nLiquidity  $256.4k\nPair age   1023d  uniswap\nRug-check  \u2713 OK (score 0)</pre>\n\ud83d\udc40 Tracked holders: none\n\ud835\udd4f X mentions disabled (no X_BEARER_TOKEN)"
+  },
+  "manual_buy_base": {
+    "pass": true,
+    "evidence": "\ud83d\udd35 BASE <b>\ud83d\udfe2 MANUAL BUY</b> \ud83d\udfe8 PAPER\n$DEGEN<pre>Spent     0.00503 ETH\nTokens    12,753.42\nFill      3.897e-07 (+0.31% impact)\nFees+gas  0.00006 ETH\nBalance   0.4950 ETH</pre>"
+  },
+  "token_card_ethereum": {
+    "pass": true,
+    "evidence": "\u27e0 ETH <b>$PEPE</b> \u2014 Pepe\n<code>0x6982508145454ce325ddbe47a25d4ec3d2311933</code><pre>Price      $4.347e-06  (1.869e-09 ETH)\nMCap       $1.80B\nLiquidity  $29.72M\nPair age   1291d  uniswap\nRug-check  \u2713 OK (score 0)</pre>\n\ud83d\udc40 Tracked holders: none\n\ud835\udd4f X mentions disabled (no X_BEARER_TOKEN)"
+  },
+  "manual_buy_ethereum": {
+    "pass": true,
+    "evidence": "\u27e0 ETH <b>\ud83d\udfe2 MANUAL BUY</b> \ud83d\udfe8 PAPER\n$PEPE<pre>Spent     0.01120 ETH\nTokens    5,302,316.31\nFill      1.875e-09 (+0.30% impact)\nFees+gas  0.00126 ETH\nBalance   0.4888 ETH</pre>"
+  },
+  "token_card_bsc": {
+    "pass": true,
+    "evidence": "\ud83d\udfe1 BSC <b>$Cake</b> \u2014 PancakeSwap Token\n<code>0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82</code><pre>Price      $2.1000  (0.002831 BNB)\nMCap       $705.68M\nLiquidity  $987.4k\nPair age   1302d  pancakeswap\nRug-check  \u2713 OK (score 0)</pre>\n\ud83d\udc40 Tracked holders: none\n\ud835\udd4f X mentions disabled (no X_BEARER_TOKEN)"
+  },
+  "manual_buy_bsc": {
+    "pass": true,
+    "evidence": "\ud83d\udfe1 BSC <b>\ud83d\udfe2 MANUAL BUY</b> \ud83d\udfe8 PAPER\n$Cake<pre>Spent     0.02015 BNB\nTokens    6.99\nFill      0.00284 (+0.30% impact)\nFees+gas  0.00030 BNB\nBalance   1.98 BNB</pre>"
+  },
+  "token_card_robinhood": {
+    "pass": true,
+    "evidence": "\ud83e\udeb6 HOOD <b>$ROBINHOOD</b> \u2014 Robinhood\n<code>0x008df4b3e857d06c4603aeb11f267ccd32ce2005</code><pre>Price      $0.001285  (5.525e-07 ETH)\nMCap       $1.29M\nLiquidity  $101.4k\nPair age   47d  uniswap\nRug-check  \u2713 OK (score 0)</pre>\n\ud83d\udc40 Tracked holders: none\n\ud835\udd4f X mentions disabled (no X_BEARER_TOKEN)"
+  },
+  "manual_buy_robinhood": {
+    "pass": true,
+    "evidence": "\ud83e\udeb6 HOOD <b>\ud83d\udfe2 MANUAL BUY</b> \ud83d\udfe8 PAPER\n$ROBINHOOD<pre>Spent     0.00501 ETH\nTokens    8,966.51\nFill      5.543e-07 (+0.32% impact)\nFees+gas  0.00004 ETH\nBalance   0.4950 ETH</pre>"
+  },
+  "runner_started": {
+    "pass": true,
+    "evidence": "loops: ['poll-solana', 'poll-base', 'poll-ethereum', 'poll-bsc', 'poll-robinhood', 'leaderboard', 'daily']"
+  },
+  "groupbuy_shared_funder_discount": {
+    "pass": true,
+    "evidence": "no entry with 2 same-funder wallets: True; entered after independent 3rd: True; alert: ['\u25ce SOL <b>\ud83d\udc65 GROUP BUY</b> \ud83d\udfe8 PAPER\\n<b>2</b> independent tracked wallets bought <b>$WIF</b> <code>EKpQ...cjm</code><pre>1. replay1          1.00 SOL +0m00s\\n2. replay2          1.00 SOL +0m01s\\n3. replay3          1.00 SOL +0m30s</pre>\\n\u26a0\ufe0f Shared funder: Bund...111 \u2192 replay1, replay2 (counted once)\\nX: X mentions disabled (no X_BEARER_TOKEN)\\n\u2705 Paper-entered 0.25 SOL @ 0.00177']"
+  },
+  "groupbuy_scale_out": {
+    "pass": true,
+    "evidence": "tokens 139.80 \u2192 104.85 after 4th wallet (3rd cluster)"
+  },
+  "groupbuy_early_exit": {
+    "pass": true,
+    "evidence": "['\u25ce SOL <b>\ud83d\udc65 GROUP EXIT</b> \ud83d\udfe8 PAPER\\nEarly buyer <b>replay1</b> sold $WIF \u2192 full exit\\nRealized -0.01 SOL']"
+  },
+  "copy_proportional_sell": {
+    "pass": true,
+    "evidence": "leader sold 50% \u2192 our remaining 50.00%"
+  },
+  "copy_buy_alert": {
+    "pass": true,
+    "evidence": "\u25ce SOL <b>\ud83d\udfe2 COPY BUY</b> \ud83d\udfe8 PAPER\nLeader <b>replay5</b> bought <b>$POPCAT</b><pre>Leader size   2.00 SOL @ 0.000417\nOur size      0.50 SOL  (0.25x)\nOur fill      0.0004183\nSlippage      +0.30% vs leader\nFees+gas      0.00570 SOL\nLiquidity     $3.39M \u2713   Rug-check \u2713</pre>"
+  },
+  "auto_switch_2_losses": {
+    "pass": true,
+    "evidence": "\u25ce SOL <b>\ud83d\udd01 TRADER SWITCHED: 2 losses in a row</b>\n<pre>\u2717 $WIF       -0.02 SOL\n\u2717 POPCAT     -0.02 SOL</pre><pre>replay5 \u2192 BENCHED 24h (until 13:24 27 Oct WAT)\nNow following \u2192 slingoor (#1)\n7d PnL +17435 \u00b7 Win 63% \u00b7 182 trades</pre> | now following {'user_id': 1001, 'chain': 'solana', 'wallet': '5YRgrP3mjGzrzirYYN5HAQH19cTYREYwGxW6XRJQUzij', 'label': 'slingoor', 'since': 1793017447}"
+  },
+  "undo_switch": {
+    "pass": true,
+    "evidence": "\u21a9\ufe0f Switch undone \u2014 following <b>replay5</b> again (streak reset)."
+  },
+  "dev_watch_manual_alert_only": {
+    "pass": true,
+    "evidence": "manual kept, alert sent"
+  },
+  "trader_exit_alert": {
+    "pass": true,
+    "evidence": "['\u25ce SOL \u26a0\ufe0f <b>TRADER EXIT</b>: tracked wallet <b>replay3</b> sold 50% of $POPCAT \u2014 you hold it (manual).']"
+  },
+  "manual_sell_25_button": {
+    "pass": true,
+    "evidence": "\u25ce SOL <b>\ud83d\udd34 SELL 25%</b> \ud83d\udfe8 PAPER $Bonk (manual)<pre>Received  0.02365 SOL\nFill      2.942e-08\nPnL       -0.00152 SOL\nStatus    open\nBalance   9.78 SOL</pre>"
+  },
+  "manual_sell_100_cmd": {
+    "pass": true,
+    "evidence": "\u25ce SOL <b>\ud83d\udd34 SELL 100%</b> \ud83d\udfe8 PAPER $Bonk (manual)<pre>Received  0.07236 SOL\nFill      2.942e-08\nPnL       -0.00317 SOL\nStatus    closed\nBalance   9.86 SOL</pre>"
+  },
+  "live_poll_solana": {
+    "pass": true,
+    "evidence": "{\"ts\": 1793018035, \"wallets\": 25, \"events\": 60}"
+  },
+  "live_poll_base": {
+    "pass": true,
+    "evidence": "{\"ts\": 1793018020, \"wallets\": 7, \"events\": 0}"
+  },
+  "live_poll_ethereum": {
+    "pass": true,
+    "evidence": "{\"ts\": 1793018021, \"wallets\": 7, \"events\": 21}"
+  },
+  "live_poll_bsc": {
+    "pass": true,
+    "evidence": "{\"ts\": 1793018021, \"wallets\": 1, \"events\": 0}"
+  },
+  "live_poll_robinhood": {
+    "pass": true,
+    "evidence": "{\"ts\": 1793018013, \"wallets\": 2, \"events\": 0}"
+  },
+  "live_wallet_events": {
+    "pass": true,
+    "evidence": "81 live swap events parsed: {'solana': 60, 'ethereum': 21}; sample: [{'chain': 'solana', 'signature': 'GgiDDW8nLL3W3tXxzhMGbvzXL1WsagLkYDCnnuRnrAMzHa9t5iqJeSVW2Se44jP1Vp6NtVWxnR2X1seTk2oE7Sz', 'wallet': '5YRgrP3mjGzrzirYYN5HAQH19cTYREYwGxW6XRJQUzij', 'token': 'pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn', 'side': 'transfer_out', 'ts': 1793017463, 'token_amount': 7101.342271, 'native_amount': 0.0, 'symbol': None}, {'chain': 'solana', 'signature': '5mMBtFni2WkaUTJvAvKiPkJkSYQgewbuFJZmo4RSHBrhPzEchEGAnuYX7ZRCh7CNUfv8TNY7t1C9eZGRtp9ukV4n', 'wallet': '85NFZZRmPgfG1u3ctjrJksV3pnTKAFMUDq2cLGyhwzeS', "
+  },
+  "live_copy_or_skip": {
+    "pass": true,
+    "evidence": "2 live copy fills, 2 live risk skips; e.g. [{'id': 18, 'user_id': 2002, 'chain': 'solana', 'position_id': 10, 'side': 'buy', 'token': 'JVtVUduUFx3HL3fA87YA77YDGn5iQoYDeDaLFNopump', 'symbol': 'Shitcoin', 'source': 'copy', 'trader': '85NFZZRmPgfG1u3ctjrJksV3pnTKAFMUDq2cLGyhwzeS', 'tokens': 31051.01227879683, 'native': 0.052450000249999996, 'price': 1.6499462171313523e-06, 'leader_price': 1.67799763624691e-06, 'slippage_pct': -1.6717198230564279, 'impact_pct': 0.3297636880411266, 'fee_native': 0.0005175000024999999, 'gas_native': 0.0007, 'pnl_native': None, 'ts': 1793017593, 'leader_sig': '5mMBtF"
+  },
+  "screen_start": {
+    "pass": true,
+    "evidence": "<b>\ud83d\udc31 COPYCAT COPY-TRADER</b> \ud83d\udfe8 PAPER\nPaper trading mode \u2014 simulated funds, no real swaps.\nActive chain: <b>All</b>\n\n\u25ce SOL<pre>Balance   9.86 SOL  (start 10)\nToday     -0.04 SOL\nOpen pos. 1  |  Exposure 0.10 SOL\nLoss cap  0.0439 / 1 SOL used</pre>\ud83d\udc51 <b"
+  },
+  "screen_positions": {
+    "pass": true,
+    "evidence": "<b>\ud83d\udcc2 Open positions</b> \ud83d\udfe8 PAPER\n\u25ce SOL <b>$POPCAT</b> #9 \u00b7 manual\n   cost 0.10 SOL \u00b7 value 0.10 SOL \u00b7 uPnL -0.00 SOL\n\ud83d\udd35 BASE <b>$DEGEN</b> #2 \u00b7 manual\n   cost 0.0050 ETH \u00b7 value 0.0049 ETH \u00b7 uPnL -0.0001 ETH\n\u27e0 ETH <b>$PEPE</b> #3 \u00b7 manual\n   cost 0.011"
+  },
+  "screen_pnl_today": {
+    "pass": true,
+    "evidence": "<b>\ud83d\udcb0 PnL report \u00b7 today</b> \ud83d\udfe8 PAPER\n\n\u25ce SOL<pre>Net PnL       -0.04 SOL (-0.4%)\nClosed        4  (W 0 / L 4)\nWin rate      0.0%\nAvg win       +0.00 SOL\nAvg loss      -0.01 SOL\nBest          -0.004687  $Bonk\nWorst         -0.01552  $WIF\nAvg slippage  +"
+  },
+  "screen_pnl_7d": {
+    "pass": true,
+    "evidence": "<b>\ud83d\udcb0 PnL report \u00b7 last 7 days</b> \ud83d\udfe8 PAPER\n\n\u25ce SOL<pre>Net PnL       -0.04 SOL (-0.4%)\nClosed        4  (W 0 / L 4)\nWin rate      0.0%\nAvg win       +0.00 SOL\nAvg loss      -0.01 SOL\nBest          -0.004687  $Bonk\nWorst         -0.01552  $WIF\nAvg slipp"
+  },
+  "screen_log": {
+    "pass": true,
+    "evidence": "<b>\ud83d\udcdd Trade log</b> \ud83d\udfe8 PAPER\n26 13:24 \u25ce SOL SELL $Bonk [manual] 0.07236 pnl -0.003166\n26 13:24 \u25ce SOL SELL $Bonk [manual] 0.02365 pnl -0.001521\n26 13:24 \u25ce SOL BUY $POPCAT [manual] 0.1007\n26 13:24 \u25ce SOL SELL $POPCAT [copy] 0.2428 slip -1.7% pnl -0.007502"
+  },
+  "screen_settings": {
+    "pass": true,
+    "evidence": "<b>\u2699\ufe0f Settings</b> \ud83d\udfe8 PAPER<pre>Mode                        \ud83d\udfe8 PAPER \u00b7 \ud83d\udd12 LIVE locked\nActive chain                All\nCopy size                   0.25x leader\nMax position (SOL)          0.5\nSwitch trader after         2 losses in a row\nBench dropped tr"
+  },
+  "screen_bench": {
+    "pass": true,
+    "evidence": "No benched traders."
+  },
+  "screen_hours": {
+    "pass": true,
+    "evidence": "<b>\ud83d\udd50 Time-of-day (Africa/Lagos) \u00b7 30d</b><pre>13:00  n=4   win 0%  pnl -0.0439  \u26a0 worst</pre>Pause worst hours: OFF (toggle in /settings)"
+  },
+  "screen_groupbuy": {
+    "pass": true,
+    "evidence": "\ud83d\udc65 Group Buy is <b>ON</b> \u2014 alert when \u22652 independent tracked wallets buy the same token within 10 min; paper-enter on #2, scale out 25% per extra wallet (3rd/4th/5th) or X spike, full exit if an earliest buyer sells. Shared-funder wallets count once."
+  },
+  "screen_mode": {
+    "pass": true,
+    "evidence": "\ud83d\udfe8 Mode: <b>PAPER</b>. \ud83d\udd12 LIVE is locked in this version \u2014 no private keys are stored and no real swaps are possible. It unlocks only after a reviewed live-trading release."
+  },
+  "screen_advisor_on": {
+    "pass": true,
+    "evidence": "\ud83e\udd16 Grok advisor <b>ON</b> (daily trader review + summary at the morning report; advisory only, never trades).\n\u26a0\ufe0f XAI_API_KEY not set \u2014 advisor will stay silent until it is."
+  },
+  "csv_export": {
+    "pass": true,
+    "evidence": "/tmp/copycat_fills_1001.csv 'time_wat,ts,chain,side,source,symbol,token,trader,tokens,native,price,leader_price,slippage_pct,impact_pct,fee_native,gas_native,pnl_native,reason,leader_sig\\n2026-10-26 13:23:57,1793017437,solana,buy,'"
+  },
+  "pnl_card": {
+    "pass": true,
+    "evidence": "/workspace/copycat-bot/harness/out/pnl_card_live.png"
+  },
+  "trade_card": {
+    "pass": true,
+    "evidence": "/workspace/copycat-bot/harness/out/trade_card_live.png"
+  },
+  "equity_chart": {
+    "pass": true,
+    "evidence": "/workspace/copycat-bot/harness/out/equity.png"
+  },
+  "morning_report": {
+    "pass": true,
+    "evidence": "<b>\u2600\ufe0f Morning report</b> \ud83d\udfe8 PAPER \u00b7 Sun 25 Oct (WAT)\n\n\u25ce SOL Yesterday +0.00 SOL \u00b7 0 closed \u00b7 balance 9.86 SOL\n  Following: slingoor\n  Traders buying: $EKpQ...cjm (5), $JVtV...ump (1), $7GCi...2hr (1), $7GNX...ump (1), $DHou...ump (1)\n\n\ud83d\udd35 BASE Yesterday +0.0000 ETH \u00b7 0 closed \u00b7 balance 0.4950 ETH\n  Following: baslive1\n\n\u27e0 ETH Yesterday +0.0000 ETH \u00b7 0 closed \u00b7 balance 0.4888 ETH\n  Following: ethlive1\n\n\ud83d\udfe1 BSC Yesterday +0.0000 BNB \u00b7 0 closed \u00b7 balance 1.98 BNB\n  Following: none\n\n\ud83e\udeb6 HOOD Yesterday +0.00"
+  },
+  "advisor_without_key": {
+    "pass": true,
+    "evidence": "advisor ON but XAI_API_KEY missing \u2192 silent, as designed"
+  }
+}

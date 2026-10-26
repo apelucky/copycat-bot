@@ -1,0 +1,8 @@
+{
+  "_comment": "Manual trader seed list per chain. Used when leaderboard sources (GMGN) are blocked, and always merged in. Fields: wallet, label, optional pnl (native, 7d), wins, losses, trades. Entries with trades=0 are never filtered as 'thin'.",
+  "solana": [],
+  "base": [],
+  "ethereum": [],
+  "bsc": [],
+  "robinhood": []
+}
