@@ -1,0 +1,45 @@
+# Copycat on Render's free web-service plan.
+# Dashboard: New → Blueprint → connect GitHub repo apelucky/copycat-bot.
+# sync:false values are typed in once in the dashboard and are not stored in git.
+# Do not add a second instance or PR previews: Telegram allows one poller per bot token.
+
+services:
+  - type: web
+    name: copycat
+    runtime: python
+    plan: free
+    region: frankfurt
+    buildCommand: pip install -r requirements.txt
+    startCommand: python -m copycat
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHONUNBUFFERED
+        value: "1"
+      - key: TZ
+        value: Africa/Lagos
+      - key: XAI_MODEL
+        value: grok-4
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: ALLOWED_USER_IDS
+        sync: false
+      - key: DATABASE_URL
+        sync: false
+      - key: HELIUS_API_KEY
+        sync: false
+      - key: ETHERSCAN_API_KEY
+        sync: false
+      - key: X_BEARER_TOKEN
+        sync: false
+      - key: XAI_API_KEY
+        sync: false
+      - key: RPC_URL_SOLANA
+        sync: false
+      - key: RPC_URL_BASE
+        sync: false
+      - key: RPC_URL_ETHEREUM
+        sync: false
+      - key: RPC_URL_BSC
+        sync: false
+      - key: RPC_URL_ROBINHOOD
+        sync: false

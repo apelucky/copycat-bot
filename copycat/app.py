@@ -13,7 +13,7 @@ from .core.engine import Engine
 from .data.dexscreener import DexScreener
 from .data.http import Http
 from .data.xsearch import XSearch
-from .storage.sqlite_repo import SqliteRepo
+from .storage.factory import open_repo
 
 
 def build(cfg: AppConfig, notifier: Notifier, repo: Any = None, http: Http | None = None) -> tuple[Engine, Http]:
@@ -24,6 +24,6 @@ def build(cfg: AppConfig, notifier: Notifier, repo: Any = None, http: Http | Non
     }
     for c in EVM_CHAINS:
         adapters[c] = EvmAdapter(CHAINS[c], http, ds, cfg.rpc_overrides.get(c), cfg.etherscan_api_key, cfg.seed_file)
-    repo = repo or SqliteRepo(cfg.db_path)
+    repo = repo or open_repo(cfg)
     engine = Engine(cfg, repo, adapters, notifier, XSearch(http, cfg.x_bearer_token))
     return engine, http

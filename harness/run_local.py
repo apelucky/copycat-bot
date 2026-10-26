@@ -150,6 +150,7 @@ async def main(minutes: float) -> None:
     for f in ("harness.db", "harness.db-wal", "harness.db-shm", "messages.jsonl"):
         (OUT / f).unlink(missing_ok=True)
     cfg = AppConfig.from_env()
+    cfg.database_url = None  # harness always uses the local sqlite file, even if DATABASE_URL is exported
     cfg.db_path = str(OUT / "harness.db")
     cfg.poll_seconds = 20
     cfg.tracked_top_n = 12

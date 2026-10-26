@@ -1,1 +1,1 @@
-worker: python -m copycat
+web: python -m copycat
